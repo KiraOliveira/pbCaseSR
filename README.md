@@ -98,3 +98,7 @@ npx cypress open ou npx cypress run(heandless)
 ```
 
 ---
+
+## Execução dos testes
+
+[![Execução]](pb/pbCaseSR/cypress/videos/execução.mkv)
