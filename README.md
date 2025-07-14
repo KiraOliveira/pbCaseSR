@@ -34,6 +34,12 @@ PBCASESR/
 │   │       ├── api.cy.js
 |   |       ├── steps.cy.js
 |   |       └── steps.feature
+|   ├── suport/
+│   │   └── elements/
+│   │       ├── el_challengingDom.js
+|   ├── suport/
+│   │   └── pageObjects/
+│   │       ├── pb_challengingDom .js
 ├── package.json
 └── README.md
 ```
@@ -101,4 +107,7 @@ npx cypress open ou npx cypress run(heandless)
 
 ## Execução dos testes
 
-[![Execução]](pb/pbCaseSR/cypress/videos/execução.mkv)
+[![Execução]](https://github.com/user-attachments/assets/233aaf39-3483-4844-b19f-2da99a1df2db)
+
+
+
