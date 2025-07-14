@@ -13,6 +13,8 @@ describe('Search Register', () => {
       console.log('List Of All Registers: ', response)
 
       expect(response.status).to.equal(200)
+
+      // User 1
       expect(response.body[0].id).to.equal(1)
       expect(response.body[0].name).to.equal('Leanne Graham')
       expect(response.body[0].username).to.equal('Bret')
@@ -34,7 +36,29 @@ describe('Search Register', () => {
       expect(response.body[0].company.name).to.equal('Romaguera-Crona')
       expect(response.body[0].company.catchPhrase).to.equal('Multi-layered client-server neural-net')
       expect(response.body[0].company.bs).to.equal('harness real-time e-markets')
-      
+
+      // User 2
+      expect(response.body[1].id).to.equal(2)
+      expect(response.body[1].name).to.equal('Ervin Howell')
+      expect(response.body[1].username).to.equal('Antonette')
+      expect(response.body[1].email).to.equal('Shanna@melissa.tv')
+
+      // Address
+      expect(response.body[1].address.street).to.equal('Victor Plains')
+      expect(response.body[1].address.suite).to.equal('Suite 879')
+      expect(response.body[1].address.city).to.equal('Wisokyburgh')
+      expect(response.body[1].address.zipcode).to.equal('90566-7771')
+      expect(response.body[1].address.geo.lat).to.equal('-43.9509')
+      expect(response.body[1].address.geo.lng).to.equal('-34.4618')
+
+      // Phone e Site
+      expect(response.body[1].phone).to.equal('010-692-6593 x09125')
+      expect(response.body[1].website).to.equal('anastasia.net')
+
+      // Company
+      expect(response.body[1].company.name).to.equal('Deckow-Crist')
+      expect(response.body[1].company.catchPhrase).to.equal('Proactive didactic contingency')
+      expect(response.body[1].company.bs).to.equal('synergize scalable supply-chains')      
     })
   })
 
@@ -110,7 +134,7 @@ describe('Search Register', () => {
     })
   })
 
-  // Update Register
+  // Update Register 'PATCH'
   it('Update Register', () => {
     cy.request({
       method: 'PATCH',
@@ -129,6 +153,28 @@ describe('Search Register', () => {
       expect(response.body.name).to.equal('Teste Kira 2')
       expect(response.body.username).to.equal('Kira')
       expect(response.body.email).to.equal('teste@teste.com')
+    })
+  })
+
+  //Update Register 'PUT'
+  it('Update Register', () => {
+    cy.request({
+      method: 'PUT',
+      url: 'https://jsonplaceholder.typicode.com/users/9',
+      body: {
+        "name": "Teste Kira 3",
+        "username": "Kira novo",
+        "email": "teste@test.com"
+     }
+    })
+    .then((response) => {
+      console.log('Update Register:', response)
+
+      expect(response.status).to.equal(200)
+      expect(response.body.id).to.not.equal('')
+      expect(response.body.name).to.equal('Teste Kira 3')
+      expect(response.body.username).to.equal('Kira novo')
+      expect(response.body.email).to.equal('teste@test.com')
     })
   })
 
