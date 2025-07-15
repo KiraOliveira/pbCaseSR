@@ -56,7 +56,8 @@ Feature: Site Challenging DOM
     Scenario: Acessar o site Challenging DOM
         Given Acessar o site Challenging DOM
         When Clicar nos 3 botões
-        Then Clicar nos botões Edit e Delete
+        And Clicar nos botões Edit e Delete
+        Then Todas as ações devem ser realizadas
 
 ```
 
@@ -70,17 +71,21 @@ import pb_challengingDom from '../../support/pageObjects/pb_challengingDom '
 import { Given, When, Then } from 'cypress-cucumber-preprocessor/steps';
 
 Given("Acessar o site Challenging DOM", () => {
-    pb_challengingDom.acessPage();
-})
+  pb_challengingDom.acessPage();
+});
 
 When("Clicar nos 3 botões", () => {
-    pb_challengingDom.clickButton();
-})
+  pb_challengingDom.clickButton();
+});
 
-Then("Clicar nos botões Edit e Delete", () => {
-    pb_challengingDom.columnAction();
-    
-    pb_challengingDom.buttonEditDelete();
+And("Clicar nos botões Edit e Delete", () => {
+  pb_challengingDom.columnAction();
+
+  pb_challengingDom.buttonEditDelete();
+});
+
+Then("Todas as ações devem ser realizadas", () => {
+  pb_challengingDom.screen();
 })
 ```
 
