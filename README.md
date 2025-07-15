@@ -112,7 +112,10 @@ npx cypress open ou npx cypress run(heandless)
 
 ## Execução dos testes
 
-[![Execução]](https://github.com/user-attachments/assets/233aaf39-3483-4844-b19f-2da99a1df2db)
+[![Execução dos Testes]](https://github.com/user-attachments/assets/96366a67-9a76-4c53-afe6-c885ee1df527)
+
+
+
 
 
 
