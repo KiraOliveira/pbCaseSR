@@ -11,7 +11,6 @@ class acessPage {
     // Validar que está no site correto
     cy.get(el_challengingDom.textHead()).should("not.be.empty");
 
-    cy.contains(el_challengingDom.textP()).should("not.be.empty");
   }
   // Clicar nos botões um após o outro
   clickButton() {
@@ -149,6 +148,10 @@ class acessPage {
       .and("be.visible")
       .last()
       .click();
+  }
+
+  screen() {
+    cy.contains(el_challengingDom.textP()).should("not.be.empty");
   }
 }
 
